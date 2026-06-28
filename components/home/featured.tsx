@@ -11,9 +11,9 @@ export function Featured() {
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <span className="font-mono text-xs uppercase tracking-widest text-primary">Featured collection</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-primary">Featured plots</span>
           <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-            Signature residences
+            Prime plots ready for your next step
           </h2>
         </div>
         <Button asChild variant="ghost" className="text-primary hover:text-primary">

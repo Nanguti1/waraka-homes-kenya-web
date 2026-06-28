@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Aether Estate — Futuristic Luxury Real Estate',
+  title: 'Waraka Homes Kenya — Affordable Land with Ready Title Deeds',
   description:
-    'Discover architecturally significant residences. Browse curated luxury listings, penthouses, and villas designed for the future of living.',
+    'Discover genuine residential and commercial plots in Nairobi, Kiambu, and Machakos with transparent legal support and free site visits.',
   generator: 'v0.app',
   icons: {
     icon: [

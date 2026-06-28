@@ -1,16 +1,18 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
+import { company } from "@/lib/properties"
 
 export const metadata = {
-  title: "Contact — Aether Estate",
-  description: "Get in touch with Aether Estate to book a viewing or speak with a luxury real estate advisor.",
+  title: "Contact — Waraka Homes Kenya",
+  description: "Reach Waraka Homes Kenya to book a free site visit or enquire about land plots in Kenya.",
 }
 
 const details = [
-  { icon: Phone, label: "Phone", value: "+1 (415) 555-0100", href: "tel:+14155550100" },
-  { icon: Mail, label: "Email", value: "hello@aether.estate", href: "mailto:hello@aether.estate" },
-  { icon: MapPin, label: "Office", value: "One Market St, San Francisco, CA" },
-  { icon: Clock, label: "Hours", value: "Mon–Sat, 9:00 – 19:00" },
+  { icon: Phone, label: "Phone", value: company.phones[0], href: `tel:${company.phones[0].replace(/\s/g, "")}` },
+  { icon: Phone, label: "Phone", value: company.phones[1], href: `tel:${company.phones[1].replace(/\s/g, "")}` },
+  { icon: Mail, label: "Email", value: company.email, href: `mailto:${company.email}` },
+  { icon: MapPin, label: "Office", value: company.address },
+  { icon: Clock, label: "Hours", value: company.hours },
 ]
 
 export default function ContactPage() {
@@ -19,11 +21,10 @@ export default function ContactPage() {
       <div className="max-w-2xl">
         <span className="font-mono text-xs uppercase tracking-widest text-primary">Get in touch</span>
         <h1 className="mt-3 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-          Let&apos;s start a conversation
+          Let&apos;s talk about your next plot
         </h1>
         <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-          Whether you&apos;re buying, selling, or simply curious, our advisors are ready to help you navigate the
-          extraordinary.
+          Whether you&apos;re planning to build, invest, or secure a family home, we&apos;ll help you find a genuine plot with transparent legal support.
         </p>
       </div>
 

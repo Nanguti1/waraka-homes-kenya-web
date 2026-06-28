@@ -9,8 +9,22 @@ export function ContactForm() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    // TODO: POST to your Laravel API, e.g.
-    // await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/inquiries`, { method: "POST", body: ... })
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+    const firstName = (data.get("firstName") ?? "").toString().trim()
+    const lastName = (data.get("lastName") ?? "").toString().trim()
+    const email = (data.get("email") ?? "").toString().trim()
+    const phone = (data.get("phone") ?? "").toString().trim()
+    const interest = (data.get("interest") ?? "").toString().trim()
+    const message = (data.get("message") ?? "").toString().trim()
+
+    const subject = encodeURIComponent(`New inquiry from ${firstName} ${lastName}`)
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nInterest: ${interest}\n\nMessage:\n${message}`,
+    )
+
+    window.location.href = `mailto:info@waraka.homes?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 

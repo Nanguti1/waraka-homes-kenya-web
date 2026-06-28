@@ -1,10 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Bath, BedDouble, Calendar, Check, Mail, MapPin, Maximize, Phone } from "lucide-react"
+import { ArrowLeft, Calendar, Check, Mail, MapPin, Phone, Ruler, Landmark } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PropertyGallery } from "@/components/property-gallery"
-import { getAgentById, getProperties, getPropertyById, formatPrice } from "@/lib/properties"
+import { getAgentById, getProperties, getPropertyById, formatPrice, company } from "@/lib/properties"
 
 export function generateStaticParams() {
   return getProperties().map((p) => ({ id: p.id }))
@@ -13,9 +13,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const property = getPropertyById(id)
-  if (!property) return { title: "Property not found — Aether Estate" }
+  if (!property) return { title: "Property not found — Waraka Homes Kenya" }
   return {
-    title: `${property.title} — Aether Estate`,
+    title: `${property.title} — Waraka Homes Kenya`,
     description: property.description,
   }
 }
@@ -28,10 +28,10 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
   const agent = getAgentById(property.agentId)
 
   const specs = [
-    { icon: BedDouble, label: "Bedrooms", value: property.beds },
-    { icon: Bath, label: "Bathrooms", value: property.baths },
-    { icon: Maximize, label: "Area", value: `${property.area.toLocaleString()} ft²` },
-    { icon: Calendar, label: "Year built", value: property.yearBuilt },
+    { icon: Ruler, label: "Size", value: property.size },
+    { icon: Landmark, label: "Category", value: property.category },
+    { icon: MapPin, label: "County", value: property.city },
+    { icon: Calendar, label: "Title promise", value: "14 working days" },
   ]
 
   return (
@@ -79,12 +79,12 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
           </div>
 
           <section className="mt-10">
-            <h2 className="text-xl font-semibold">About this residence</h2>
+            <h2 className="text-xl font-semibold">About this plot</h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">{property.description}</p>
           </section>
 
           <section className="mt-10">
-            <h2 className="text-xl font-semibold">Features &amp; amenities</h2>
+            <h2 className="text-xl font-semibold">Highlights</h2>
             <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {property.features.map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -116,7 +116,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             <div className="mt-6 space-y-3">
               <Button asChild className="w-full rounded-full">
                 <Link href="/contact">
-                  <Calendar className="mr-1 h-4 w-4" /> Book a viewing
+                  <Calendar className="mr-1 h-4 w-4" /> Book a site visit
                 </Link>
               </Button>
               {agent && (
@@ -136,8 +136,8 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             </div>
 
             <div className="mt-6 rounded-xl border border-border/60 bg-background/40 p-4 text-sm text-muted-foreground">
-              <p className="font-mono text-xs uppercase tracking-widest text-primary">Reference</p>
-              <p className="mt-2 break-all">AE-{property.id.toUpperCase()}</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-primary">Need help?</p>
+              <p className="mt-2">Call {company.phones[0]} or email {company.email}</p>
             </div>
           </div>
         </aside>

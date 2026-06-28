@@ -2,17 +2,17 @@ import Image from "next/image"
 import Link from "next/link"
 import { Mail, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { agents } from "@/lib/properties"
+import { agents, company } from "@/lib/properties"
 
 export const metadata = {
-  title: "About — Aether Estate",
-  description: "Meet the advisors behind Aether Estate and learn about our approach to futuristic luxury living.",
+  title: "About — Waraka Homes Kenya",
+  description: "Learn how Waraka Homes Kenya helps clients buy affordable, legally compliant land in Kenya with ready title deeds.",
 }
 
 const values = [
-  { title: "Design-first", description: "We champion architecture that pushes boundaries and stands the test of time." },
-  { title: "Radically discreet", description: "Privacy and trust are the foundation of every relationship we build." },
-  { title: "Technology-led", description: "Smart tools and data give our clients an unfair advantage in any market." },
+  { title: "Affordable land", description: "We focus on genuine, budget-conscious plots that can become homes, investments, or future developments." },
+  { title: "Transparent legal process", description: "Every property is verified with clear title support and a dedicated transfer timeline." },
+  { title: "Local guidance", description: "Our team offers free site visits and direct support from our Kamakis office for confident decisions." },
 ]
 
 export default function AboutPage() {
@@ -22,12 +22,10 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <span className="font-mono text-xs uppercase tracking-widest text-primary">Who we are</span>
         <h1 className="mt-3 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-          We represent the homes of tomorrow, today.
+          We help genuine buyers secure land that can grow with them.
         </h1>
         <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-          Aether Estate was founded on a simple belief: that where you live should reflect where the world is going.
-          We partner with visionary architects, developers, and owners to bring the most forward-thinking residences
-          to a discerning global clientele.
+          Founded in {company.yearFounded}, {company.name} exists to make land ownership in Kenya simpler, safer, and more transparent. We specialize in affordable, legally compliant plots within Nairobi, Kiambu, and Machakos counties, giving clients a clear path from site visit to title ownership.
         </p>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-3">
@@ -44,7 +42,7 @@ export default function AboutPage() {
       <section className="border-y border-border/60 bg-card/30">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <span className="font-mono text-xs uppercase tracking-widest text-primary">The team</span>
-          <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Meet our advisors</h2>
+          <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Meet the Waraka Homes team</h2>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {agents.map((agent) => (
@@ -95,7 +93,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <h2 className="mx-auto max-w-2xl text-balance text-3xl font-semibold tracking-tight">
-          Let&apos;s find your next address.
+          Let&apos;s help you find a plot that fits your future.
         </h2>
         <Button asChild size="lg" className="mt-8 rounded-full">
           <Link href="/contact">Get in touch</Link>

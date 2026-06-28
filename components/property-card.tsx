@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Bath, BedDouble, Maximize, MapPin } from "lucide-react"
+import { MapPin, Ruler, Landmark } from "lucide-react"
 import { type Property, formatPrice } from "@/lib/properties"
 
 export function PropertyCard({ property }: { property: Property }) {
@@ -22,7 +22,7 @@ export function PropertyCard({ property }: { property: Property }) {
           {property.status}
         </span>
         <span className="absolute right-3 top-3 rounded-full bg-background/70 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-md">
-          {property.type}
+          {property.category}
         </span>
       </div>
 
@@ -43,13 +43,10 @@ export function PropertyCard({ property }: { property: Property }) {
 
         <div className="mt-4 flex items-center gap-4 border-t border-border/60 pt-4 text-sm text-muted-foreground">
           <span className="flex items-center gap-1.5">
-            <BedDouble className="h-4 w-4" aria-hidden="true" /> {property.beds}
+            <Ruler className="h-4 w-4" aria-hidden="true" /> {property.size}
           </span>
           <span className="flex items-center gap-1.5">
-            <Bath className="h-4 w-4" aria-hidden="true" /> {property.baths}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Maximize className="h-4 w-4" aria-hidden="true" /> {property.area.toLocaleString()} ft²
+            <Landmark className="h-4 w-4" aria-hidden="true" /> {property.category}
           </span>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Hexagon, Menu, X } from "lucide-react"
+import { Home, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -22,8 +22,8 @@ export function SiteHeader() {
     <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <Hexagon className="h-6 w-6 text-primary" aria-hidden="true" />
-          <span className="font-mono text-lg font-semibold tracking-tight">AETHER</span>
+          <Home className="h-6 w-6 text-primary" aria-hidden="true" />
+          <span className="font-mono text-lg font-semibold tracking-tight">WARAKA</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
@@ -46,7 +46,7 @@ export function SiteHeader() {
 
         <div className="hidden md:block">
           <Button asChild className="rounded-full">
-            <Link href="/contact">Book a Viewing</Link>
+            <Link href="https://wa.me/254795999444?text=Hello%20Waraka%20Homes%20Kenya%2C%20I%20would%20like%20to%20book%20a%20free%20site%20visit.">Book a Site Visit</Link>
           </Button>
         </div>
 
@@ -80,8 +80,8 @@ export function SiteHeader() {
               )
             })}
             <Button asChild className="mt-2 rounded-full">
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                Book a Viewing
+              <Link href="https://wa.me/254795999444?text=Hello%20Waraka%20Homes%20Kenya%2C%20I%20would%20like%20to%20book%20a%20free%20site%20visit." onClick={() => setOpen(false)}>
+                Book a Site Visit
               </Link>
             </Button>
           </nav>

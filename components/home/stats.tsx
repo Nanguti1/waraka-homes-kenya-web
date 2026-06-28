@@ -1,8 +1,8 @@
 const stats = [
-  { value: "$4.2B", label: "In closed sales" },
-  { value: "320+", label: "Residences sold" },
-  { value: "18", label: "Global markets" },
-  { value: "98%", label: "Client retention" },
+  { value: "5", label: "Active projects" },
+  { value: "14 days", label: "Title processing" },
+  { value: "Free", label: "Weekly site visits" },
+  { value: "3", label: "Key counties" },
 ]
 
 export function Stats() {

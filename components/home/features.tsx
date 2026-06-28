@@ -1,25 +1,25 @@
-import { Cpu, ShieldCheck, Globe2, Sparkles } from "lucide-react"
+import { Landmark, ShieldCheck, MapPin, Sparkles } from "lucide-react"
 
 const features = [
   {
-    icon: Cpu,
-    title: "Intelligent matching",
-    description: "Our platform learns your taste and surfaces residences engineered around how you actually live.",
+    icon: Landmark,
+    title: "Affordable, genuine plots",
+    description: "We specialize in compliant residential and commercial land in Nairobi, Kiambu, and Machakos.",
   },
   {
     icon: ShieldCheck,
-    title: "Discreet representation",
-    description: "Private, off-market access with white-glove negotiation and ironclad confidentiality.",
+    title: "Freehold title guarantee",
+    description: "Every plot comes with an individually ready freehold title deed, transferred safely within 14 working days.",
   },
   {
-    icon: Globe2,
-    title: "Global reach",
-    description: "A connected network spanning 18 markets, from coastal villas to metropolitan sky homes.",
+    icon: MapPin,
+    title: "Guided site visits",
+    description: "Free weekly visits are organized directly from our Kamakis office so you can inspect plots with confidence.",
   },
   {
     icon: Sparkles,
-    title: "Future-ready homes",
-    description: "Every listing is vetted for smart systems, sustainability, and architectural significance.",
+    title: "Transparent buying process",
+    description: "Buy directly, build immediately, and enjoy a clear pathway from selection to ownership.",
   },
 ]
 
@@ -28,12 +28,12 @@ export function Features() {
     <section className="border-y border-border/60 bg-card/30">
       <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="font-mono text-xs uppercase tracking-widest text-primary">Why Aether</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-primary">Why Waraka Homes</span>
           <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-            A different way to acquire a home
+            A simpler way to own land in Kenya
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            We pair human expertise with technology to make buying the extraordinary feel effortless.
+            We combine local expertise, clear legal support, and practical guidance so your land purchase feels secure from the first visit.
           </p>
         </div>
 
